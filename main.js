@@ -6,6 +6,8 @@ var express = require('express'),
 	format  	= require('util').format,
 	meetupsController = require('./server/controllers/meetups-controller');
 
+mongoose.Promise = require('bluebird');
+
 /*MongoClient.connect('mongodb://admin:xKlMFKbba94OSz9H@merakisplash-shard-00-00-1fh1l.mongodb.net:27017,merakisplash-shard-00-01-1fh1l.mongodb.net:27017,merakisplash-shard-00-02-1fh1l.mongodb.net:27017/admin?ssl=true&replicaSet=MerakiSplash-shard-0&authSource=admin', function(err, db) {
 	if (err) {
 		throw err;
