@@ -19,5 +19,11 @@ module.exports.list = function (req, res) {
 
 module.exports.clear = function (req, res) {
 	console.log("Removing data in db");
-	Meetup.remove({});
+	Meetup.remove({}, function(err) {
+		if (err) {
+			console.log(err);
+		} else {
+			res.end('success');
+		}
+	});
 }
