@@ -1,7 +1,21 @@
 var express = require('express'),
 	app 	= express(),
-	bodyParser = require('body-parser');
+	bodyParser = require('body-parser'),
+	mongoose	= require('mongoose'),
+	MongoClient = require('mongodb').MongoClient,
+	format  	= require('util').format,
 	meetupsController = require('./server/controllers/meetups-controller.js');
+
+MongoClient.connect('mongodb://admin:xKlMFKbba94OSz9H@merakisplash-shard-00-00-1fh1l.mongodb.net:27017,merakisplash-shard-00-01-1fh1l.mongodb.net:27017,merakisplash-shard-00-02-1fh1l.mongodb.net:27017/admin?ssl=true&replicaSet=MerakiSplash-shard-0&authSource=admin', function(err, db) {
+	if (err) {
+		throw err;
+	} else {
+		console.log("successfully connected to the database");
+	}
+	db.close();
+})
+
+//mongoose.connect('mongodb://localhost:27017/mean-demo');
 
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
