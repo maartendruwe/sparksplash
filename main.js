@@ -33,7 +33,9 @@ app.get('/', function (req, res) {
 
 app.use('/js', express.static(__dirname + '/client/js')); //everytime someone requests /js file, routed to /client/js folder
 
+//Create REST API
 app.post('/api/meetups', meetupsController.create);
+app.get('/api/meetups', meetupsController.list);
 
 app.listen(3000, function() {
 	console.log('I\'m Listening ...');

@@ -8,3 +8,9 @@ module.exports.create = function (req, res) {
 	}); 
 	console.log('meetup saved');
 } 
+
+module.exports.list = function (req, res) {
+	Meetup.find({}, function(err, results) {
+		res.json(results);
+	})
+}
