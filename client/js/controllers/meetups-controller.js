@@ -1,8 +1,10 @@
 app.controller('meetupsController', ['$scope', '$resource', function ($scope, $resource) {
+	var Meetup = $resource('/api/meetups'); //base url for REST model/resource
 	$scope.meetupsCount = 10;
 	$scope.meetups = [];
 	$scope.createMeetup = function () {
-		$scope.meetups.push({name: $scope.meetupName});
-		$scope.meetupName = '';
+		var meetup = new Meetup();
+		meetup.name = $scope.meetupName;
+		meetup.$save();
 	}
 }]);
