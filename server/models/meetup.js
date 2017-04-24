@@ -1,4 +1,5 @@
 var mongoose = require('mongoose');
+var Schema = mongoose.Schema;
 
 //exports --> give access
 //Define mongoose/mongodb schema!
