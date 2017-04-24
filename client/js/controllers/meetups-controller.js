@@ -6,5 +6,6 @@ app.controller('meetupsController', ['$scope', '$resource', function ($scope, $r
 		var meetup = new Meetup();
 		meetup.name = $scope.meetupName;
 		meetup.$save();
+		$scope.meetupName = '';
 	}
 }]);
