@@ -3,7 +3,8 @@ var express = require('express'),
 	bodyParser = require('body-parser');
 	meetupsController = require('./server/controllers/meetups-controller.js');
 
-app.use(bodyParser());
+app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.json());
 
 app.get('/', function (req, res) {
 	res.sendFile(__dirname + '/client/views/index.html');
