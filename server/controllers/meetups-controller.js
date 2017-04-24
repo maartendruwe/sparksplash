@@ -16,3 +16,8 @@ module.exports.list = function (req, res) {
 		console.log(err);
 	});
 }
+
+module.exports.clear = function (req, res) {
+	console.log("Removing data in db");
+	Meetup.remove({})
+}
