@@ -1,7 +1,10 @@
 app.controller('meetupsController', ['$scope', '$resource', function ($scope, $resource) {
 	var Meetup = $resource('/api/meetups'); //base url for REST model/resource
-	$scope.meetupsCount = 10;
-	$scope.meetups = [];
+	Meetup.query(function (results) {
+		$scope.meetups = results;
+	});
+
+	//$scope.meetups = [];
 	$scope.createMeetup = function () {
 		var meetup = new Meetup();
 		meetup.name = $scope.meetupName;
@@ -9,5 +12,11 @@ app.controller('meetupsController', ['$scope', '$resource', function ($scope, $r
 			$scope.meetups.push(result);
 		});
 		$scope.meetupName = '';
+	}
+
+	$scope.queryDB = function () {
+		Meetup.query(function (results) {
+			$scope.meetups = results;
+		});
 	}
 }]);
