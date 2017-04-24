@@ -1,6 +1,9 @@
 var express = require('express'),
 	app 	= express(),
+	bodyParser = require('body-parser');
 	meetupsController = require('./server/controllers/meetups-controller.js');
+
+app.use(bodyParser());
 
 app.get('/', function (req, res) {
 	res.sendFile(__dirname + '/client/views/index.html');
