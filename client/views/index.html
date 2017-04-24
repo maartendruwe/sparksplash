@@ -10,11 +10,15 @@
 		<!-- Meetups View -->
 		<div ng-controller="meetupsController">
 			<h1> There are {{meetupsCount}} meetups</h1>
-			<ul>
-				<li ng-repeat="meetup in meetups">
+			<ul> <!-- unordered list -->
+				<li ng-repeat="meetup in meetups"> <!-- For each meetup in meetups -->
 					{{meetup.name}}
 				</li>
 			</ul>
+			<form ng-submit="createMeetup()">
+				<input type="text" placeholder="Meetup name" ng-model="meetupName"></input>
+				<button type="submit">Add</button>
+			</form>
 		</div>
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
 		<script type="text/javascript" src="/js/controllers/meetups-controller.js"></script>
