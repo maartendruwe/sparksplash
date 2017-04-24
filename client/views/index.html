@@ -11,7 +11,7 @@
 		<script type="text/javascript" src="/js/controllers/meetups-controller.js"></script>
 		<!-- Meetups View -->
 		<div ng-controller="meetupsController">
-			<h1> There are {{meetupsCount}} meetups</h1>
+			<h1> There are {{meetups.length}} meetups</h1>
 			<ul> <!-- unordered list -->
 				<li ng-repeat="meetup in meetups"> <!-- For each meetup in meetups -->
 					{{meetup.name}}
