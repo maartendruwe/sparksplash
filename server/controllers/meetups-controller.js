@@ -2,6 +2,8 @@ var Meetup = require('../models/meetup'); //Meetup model --> in this case a mong
 
 module.exports.create = function (req, res) {
 	var meetup = new Meetup(req.body);
-	meetup.save(); 
+	meetup.save(function (err) {
+		console.log(err);
+	}); 
 	console.log('meetup saved');
 } 
