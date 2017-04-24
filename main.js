@@ -18,6 +18,11 @@ var express = require('express'),
 // connection string using mongoose:
 var uri = 'mongodb://admin:xKlMFKbba94OSz9H@merakisplash-shard-00-00-1fh1l.mongodb.net:27017,merakisplash-shard-00-01-1fh1l.mongodb.net:27017,merakisplash-shard-00-02-1fh1l.mongodb.net:27017/admin?ssl=true&replicaSet=MerakiSplash-shard-0&authSource=admin&node-test';
 mongoose.connect(uri);
+var db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', function() {
+  // we're connected!
+});
 
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
