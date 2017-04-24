@@ -1,6 +1,6 @@
 var express = require('express'),
 	app 	= express(),
-	meetupsController = require('./server/controllers/meetups-controller');
+	meetupsController = require('./server/controllers/meetups-controller.js');
 
 app.get('/', function (req, res) {
 	res.sendFile(__dirname + '/client/views/index.html');
