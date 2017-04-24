@@ -21,7 +21,7 @@ mongoose.connect(uri);
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function() {
-  // we're connected!
+  console.log("successfully connected to the database");
 });
 
 app.use(bodyParser.urlencoded({extended: false}));
