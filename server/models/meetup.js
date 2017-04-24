@@ -1,5 +1,6 @@
 var mongoose = require('mongoose');
 
-module.exports = mongoose.model('Meetup', { //exports --> give access
-	name: String  //Define mongoose/mongodb schema!
-});
+//exports --> give access
+//Define mongoose/mongodb schema!
+module.exports = mongoose.model('Meetup', { name: String },
+										  { collection: 'meetups'}); //specify collection
