@@ -10,6 +10,7 @@ module.exports.create = function (req, res) {
 } 
 
 module.exports.list = function (req, res) {
+	console.log("Looking for data in db");
 	Meetup.find({}, function(err, results) {
 		res.json(results);
 		console.log(err);
