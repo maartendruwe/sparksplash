@@ -18,5 +18,8 @@ app.controller('meetupsController', ['$scope', '$resource', function ($scope, $r
 		Meetup.remove({}, function () {
 			console.log('Emptied db');
 		});
+		Meetup.query(function (results) {
+			$scope.meetups = results;
+		});
 	}
 }]);
