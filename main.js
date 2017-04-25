@@ -38,7 +38,7 @@ app.use('/js', express.static(__dirname + '/client/js')); //everytime someone re
 //Create REST API
 app.post('/api/meetups', meetupsController.create);
 app.get('/api/meetups', meetupsController.list);
-app.delete('api/meetups', meetupsController.clear);
+app.delete('/api/meetups', meetupsController.clear);
 
 app.listen(3000, function() {
 	console.log('I\'m Listening ...');
